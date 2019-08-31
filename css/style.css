@@ -1,0 +1,80 @@
+body{
+	margin:0;
+	font-family: sans-serif;
+}
+
+#btn-menu{
+	display: none;
+
+}
+
+
+header{
+	background-color: #2f2f2f; /*cor do menu*/
+	font-weight: 600;/* deixa fonte mais preenchida */
+}
+
+header label {
+	color:#efefef;
+	font-size:20px;
+	display:block;
+	padding: 5px 10px;
+	width: 20px;
+	border-right: 1px solid #efefef;
+	display: none; /* faz desaparecer o display /menu*/
+}
+
+header label:hover{
+	background-color: #ff5900;
+}
+
+.menu ul {
+	list-style: none;
+	margin:0;
+	padding:0;
+	display:flex; /*faz ficar na horizontal*/
+	/*justify-content: center;centraliza o conteúdo */
+	transition: all .5s /*faz o menu entrar deslizando elegante .5 é meio segundo*/
+
+}
+
+.menu li a{
+	color: #efefef; /*define a cor das letras no menu'*/
+	text-decoration: none;
+	padding:10px 100px; /* faz com que ocupe a tela toda, menu vertical*/
+	display:block;/* ele preenche o bloco do Menu*/
+	border-right: 1px solid #efefef;  /*borda do menu (linhas que separa o menu)*/
+
+}
+
+
+.menu li a:hover{
+	background-color: #ff5900; /*passa o mouse e fica de outra cor*/
+
+}
+
+
+@media(max-width:768px){
+	/* a partir do momento que passar de  pixels e faz o comando abaixo*/
+
+header label {
+	display:inline-block;
+}
+	.menu ul{
+position: absolute;
+background-color: #2f2f2f;
+	width:70%;
+	flex-direction:column; /*posicionar os itens em coluna*/
+	margin-left: -70% /* para esconder o menu*/
+}
+
+.menu li a {
+	border-top:1px solid #efefef;/* borda no menu quando acionado */ 
+}
+
+
+#btn-menu:checked ~ .menu ul {  /*quando menu for selecionado apresenta o menu*/
+	margin-left: 0; 
+
+}
+
